@@ -1,0 +1,25 @@
+$font-color: red;
+$border-style: 2px green dashed;
+
+#super-container {
+  background-color: #ccc;
+  width: 600px;
+  height: 600px;
+
+  .content {
+    font-weight: bolder;
+    padding: 20px;
+
+    &-title {
+      text-decoration: underline;
+      color: $font-color;
+    }
+
+    &-description {
+      font-family: Arial, serif;
+      color: $font-color;
+      border: $border-style;
+    }
+
+  }
+}
