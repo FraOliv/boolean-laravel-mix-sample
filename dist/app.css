@@ -1,6 +1,7 @@
 #super-container {
-  background-color: #ccc;
-  width: 600px;
+  background-color: #fff;
+  border: 2px #ccc dashed;
+  width: 800px;
   height: 600px;
 }
 #super-container .content {
@@ -9,10 +10,38 @@
 }
 #super-container .content-title {
   text-decoration: underline;
-  color: red;
+  color: #444;
 }
 #super-container .content-description {
   font-family: Arial, serif;
-  color: red;
+  color: #444;
   border: 2px green dashed;
+}
+#super-container .content-card-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#super-container .content-card-container .card-slim {
+  box-shadow: 0 0 6px #eee;
+  border: 1px #ccc solid;
+  border-radius: 10px;
+  float: left;
+  width: 33%;
+  height: 200px;
+}
+#super-container .content-card-container .card-fat {
+  box-shadow: 0 0 6px #eee;
+  border: 1px #ccc solid;
+  border-radius: 10px;
+  background-image: url("../img/hero.jpg");
+  float: left;
+  width: 66%;
+  height: 200px;
+}
+@media screen and (min-width: 768px) {
+  #super-container .content-card-container .card-fat {
+    border: 4px red solid;
+    width: calc(66% - 8px);
+  }
 }

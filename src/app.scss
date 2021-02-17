@@ -1,9 +1,23 @@
-$font-color: red;
+@import "colors";
+@import "variables";
+
 $border-style: 2px green dashed;
+@mixin card-style {
+  box-shadow: 0 0 6px #eee;
+  border: 1px #ccc solid;
+  border-radius: 10px;
+}
+@mixin clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 
 #super-container {
-  background-color: #ccc;
-  width: 600px;
+  background-color: #fff;
+  border: 2px #ccc dashed;
+  width: 800px;
   height: 600px;
 
   .content {
@@ -19,6 +33,36 @@ $border-style: 2px green dashed;
       font-family: Arial, serif;
       color: $font-color;
       border: $border-style;
+    }
+
+    &-card-container {
+
+      &:after {
+        @include clearfix;
+      }
+
+      .card-slim {
+        @include card-style;
+        float: left;
+        width: 33%;
+        height: 200px;
+      }
+
+      .card-fat {
+        @include card-style;
+        background-image: url($bg-generic-image);
+        float: left;
+        width: 66%;
+        height: 200px;
+
+        @media screen and (min-width: 768px) {
+          border: 4px red solid;
+          width: calc(66% - 8px);
+        }
+
+      }
+
+
     }
 
   }
